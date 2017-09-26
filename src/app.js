@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Counter from './Counter';
 import User from './User';
-
+import SignUp from './SignUp';
+import $ from 'jquery';
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -14,34 +15,37 @@ class App extends React.Component {
     this.fetchUsers();
   }
   fetchUsers () {
+    console.log('fetching users');
     $.ajax({
-      type: 'GET',
-      url: '/users',
-      data: data,
+      method: 'GET',
+      url: '/home',
+
       success: (data) => {
+        console.log('success. data: ', data);
         this.setState({
-          users: data.users
+          users: data[0]
         });
       }
     });
   }
   render () {
-    return (
-      <div className="container">
-        <h1>Important People</h1>
-         <div class="row text-center" style="display:flex; flex-wrap: wrap;">
-          {
-            if(this.users){
-              this.users.map((user) => {
+    if(this.state.users){
+      return (
+        <div className="container">
+          <h1>Important People</h1>
+          <div className="row text-center">
+            {
+              this.state.users.map((user) => {
                 return <User user = {user}/>
               })
-            } else {
-              <h1>Loading...</h1>
             }
-          }
-         </div>
-      </div>
-    )
+          </div>
+          <SignUp/>
+        </div>
+      )
+    } else {
+      return <h1>Loading...</h1>
+    }
   }
 }
 

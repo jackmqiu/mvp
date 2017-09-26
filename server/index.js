@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const webpackConfig = require('../webpack.config.js');
 const app = express();
 const bodyParser = require('body-parser');
-const users = require('./db');
+const db = require('./db');
 
 const compiler = webpack(webpackConfig);
 
@@ -25,11 +25,19 @@ app.use(express.static(__dirname + '/../www'));
 //   res.status(200).sendFile('index');
 // })
 app.get('/home', function(req, res) {
-  users.selectAll().then((data) => {
+  console.log('get request to home received');
+  db.selectAll().then((data) => {
+    console.log('server response received: ', data);
     res.status(200).json(data);
   }).catch(err => res.sendStatus(500));
 });
-
+app.post('/home', function(req, res) {
+  console.log('post request to home received');
+  db.selectAll().then((data) => {
+    console.log('server response received: ', data);
+    res.status(200).json(data);
+  }).catch(err => res.sendStatus(500));
+});
 
 const server = app.listen(3030, function() {
   const host = server.address().address;
