@@ -1,0 +1,35 @@
+{
+  "name": "myspace",
+  "version": "1.0.0",
+  "description": "mvp",
+  "main": "index.js",
+  "scripts": {
+    "compile": "webpack",
+    "start": "nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackmqiu/hrsf81-mvp.git"
+  },
+  "author": "Jack Qiu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackmqiu/hrsf81-mvp/issues"
+  },
+  "homepage": "https://github.com/jackmqiu/hrsf81-mvp#readme",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.15.5",
+    "nodemon": "^1.12.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "webpack": "^3.6.0",
+    "webpack-dev-middleware": "^1.12.0"
+  }
+}
