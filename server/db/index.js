@@ -18,7 +18,7 @@ db.connectAsync()
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(40) UNIQUE,
     github VARCHAR(64),
-    picturelink VARCHAR(100)
+    picturelink VARCHAR(500)
   );`));
 
 db.selectAll = () => {
