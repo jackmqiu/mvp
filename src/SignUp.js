@@ -23,19 +23,9 @@ var SignUp = () => {
                                 <input className="form-control" type="text" name="github" placeholder="cats123"/>
                             </div>
                             <div className="form-group">
-                                <label>Email</label>
-                                <input className="form-control" type="text" name="email" placeholder="hacks@hacks.com"/>
+                                <label>Picture Link</label>
+                                <input className="form-control" type="text" name="picturelink" placeholder="www.imgur.com/abcd"/>
                             </div>
-                            <div className="form-group">
-                                <label>Password</label>
-                                <input className="form-control" type="password" name="password" placeholder="at least 6 characters"/>
-                            </div>
-                            <div className="form-group">
-                                <label>Re-enter password</label>
-                                <input className="form-control" type="password" name="" placeholder=""/>
-                            </div>
-
-
                             <div className="form-group">
                                 <button className="btn btn-lg btn-primary btn-block">Create your HackedIn</button>
                             </div>

@@ -24,4 +24,8 @@ db.connectAsync()
 db.selectAll = () => {
   return db.queryAsync('SELECT * FROM users;');
 }
+db.postUser = (user) => {
+  console.log(user);
+  return connection.query(`INSERT INTO USERS (username, github, picturelink) VALUES("${user.username}", "${user.github}", "${user.picturelink}");`);
+}
   module.exports = db;

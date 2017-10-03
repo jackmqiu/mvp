@@ -32,11 +32,14 @@ app.get('/home', function(req, res) {
   }).catch(err => res.sendStatus(500));
 });
 app.post('/home', function(req, res) {
-  console.log('post request to home received');
-  db.selectAll().then((data) => {
-    console.log('server response received: ', data);
-    res.status(200).json(data);
-  }).catch(err => res.sendStatus(500));
+  console.log('post request to home received', req.body);
+  db.postUser(req.body)//.then((data) => {
+  //   console.log('server response received: ', data);
+  //   // res.status(200).json(data);
+  //   res.redirect('/');
+  //   res.status(200).end();
+  // }).catch(err => console.log);
+  res.redirect('/');
 });
 
 const server = app.listen(3030, function() {
